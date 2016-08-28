@@ -3,11 +3,15 @@ var container = document.getElementById('timer-wrap'),
     
 container.innerHTML = '00';
 
+function padZero(num) {
+  return (num < 10) ? "0"+num : num;
+}
+
 function countDown(i) {
   i = start - 1;
 
   var int = setInterval(function () {
-    container.innerHTML = i;
+    container.innerHTML = padZero(i);
     i-- || loop();
   }, 1000);
 
