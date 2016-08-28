@@ -1,24 +1,30 @@
-var container = document.getElementById('timer-wrap'),
-    start = 60;
-    
-container.innerHTML = '00';
+var minutesWrap = document.getElementById('minutes-wrap'),
+    secondsWrap = document.getElementById('seconds-wrap'),
+    seconds = 60,
+    minutes = 25;
 
+// set up display
+minutesWrap.innerHTML = minutes;
+secondsWrap.innerHTML = '00';
+
+// single digits should have leading zero
 function padZero(num) {
   return (num < 10) ? "0"+num : num;
 }
 
 function countDown(i) {
-  i = start - 1;
+  i = seconds - 1;
 
   var int = setInterval(function () {
-    container.innerHTML = padZero(i);
+    secondsWrap.innerHTML = padZero(i);
     i-- || loop();
   }, 1000);
 
+  // seconds countdown should loop until minutes = 0
   var loop = function() {
-    container.innerHTML = '00';
-    i = start - 1;
+    secondsWrap.innerHTML = '00';
+    i = seconds - 1;
   };
 }
 
-countDown(start);
+countDown(seconds);

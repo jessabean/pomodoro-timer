@@ -1,2 +1,8 @@
 body {
   background: white; }
+
+.time {
+  display: inline-block; }
+  .time + .time::before {
+    content: ":";
+    margin-right: 4px; }
