@@ -16,9 +16,8 @@ function countDown(i) {
   }, 1000);
 
   var loop = function() {
-    clearInterval(int);
     container.innerHTML = '00';
-    countDown(start);
+    i = start - 1;
   };
 }
 
