@@ -6,8 +6,8 @@
 
 - Set the number of minutes to start with
     - `minutesStart` = 25
-- Need total time in ms for the countdown 
-    - `TIME` (total ms) = `minutesStart` * 60 (s) * 1000 (ms)
+- Need total time in s for the countdown 
+    - `TIME` (total ms) = `minutesStart` * 60 (s)
 - Set up display
     - seconds HTML = '00'
     - minutes HTML = `minutesStart`
