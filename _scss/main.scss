@@ -1,11 +1,13 @@
 body {
   background: white;
+  min-height: 100vh;
 }
-
 
 .time {
   display: inline-block;
-
+  font-size: 2.5rem;
+  font-weight: bold;
+  
   & + .time::before {
     content: ":";
     margin-right: 4px;
