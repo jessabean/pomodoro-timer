@@ -1,10 +1,8 @@
 var minutesWrap = document.getElementById('minutes-wrap'),
     secondsWrap = document.getElementById('seconds-wrap'),
-    seconds = 60,
-    minutes = 2;
-
-// total time in s
-var TIME = minutes * seconds;
+    minutes     = 25,
+    seconds     = minutes * 60,
+    currentSecond;
 
 // set up display
 minutesWrap.innerHTML = padZero(minutes);
@@ -15,32 +13,24 @@ function padZero(num) {
   return (num < 10) ? "0"+num : num;
 }
 
-function countDown(i) {
-  seconds = 60 - 1;
-  i = i - 1;
-
+function countDown(minutes) {
   var int = setInterval(function () {
-    if(seconds === 59) {
-      minutesWrap.innerHTML = padZero(minutes - 1);
+    currentSecond = seconds%60;
+
+    if(currentSecond === 59) {
+      minutes--;
+      minutesWrap.innerHTML = padZero(minutes);
     }
-    
-    secondsWrap.innerHTML = padZero(seconds);
-    seconds-- || secondsLoop();
-    i-- || stopTimer();
+
+    secondsWrap.innerHTML = padZero(currentSecond);
+    seconds-- || stopTimer();
   }, 1000);
 
-  // seconds countdown should loop until minutes = 0
-  var secondsLoop = function() {
-    secondsWrap.innerHTML = '00';
-    minutesWrap.innerHTML = padZero(minutes - 1);
-    seconds = 60 - 1;
-    minutes = minutes - 1;
-  };
-
   var stopTimer = function() {
-    minutesWrap.innerHTML = '00';
+    minutesWrap.innerHTML = padZero(minutes);
+    secondsWrap.innerHTML = padZero(currentSecond);
     clearInterval(int);
   }
 }
 
-countDown(TIME);
+countDown(minutes);
