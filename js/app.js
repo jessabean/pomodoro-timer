@@ -2,7 +2,8 @@ var minutesWrap = document.getElementById('minutes-wrap'),
     secondsWrap = document.getElementById('seconds-wrap'),
     startBtn    = document.getElementById('start-button'),
     minutes     = 25,
-    seconds = minutes * 60;
+    seconds     = minutes * 60,
+    interval;
 
 // single digits should have leading zero
 var padZero = function(num) {
