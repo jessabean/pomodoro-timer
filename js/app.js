@@ -1,6 +1,7 @@
 var minutesWrap = document.getElementById('minutes-wrap'),
     secondsWrap = document.getElementById('seconds-wrap'),
     startBtn    = document.getElementById('start-button'),
+    resetBtn    = document.getElementById('reset-button'),
     minutes     = 25,
     seconds     = minutes * 60,
     interval;
@@ -15,10 +16,17 @@ var startTimer = function() {
 };
 
 var stopTimer = function() {
-  minutesWrap.innerHTML = padZero(minutes);
-  secondsWrap.innerHTML = '00';
   clearInterval(interval);
 };
+
+var resetTimer = function() {
+  stopTimer();
+
+  minutes = 25;
+  seconds = minutes * 60,
+  minutesWrap.innerHTML = padZero(minutes);
+  secondsWrap.innerHTML = '00';
+}
 
 var countDown = function() {
   seconds--;
@@ -40,4 +48,4 @@ minutesWrap.innerHTML = padZero(minutes);
 secondsWrap.innerHTML = '00';
 
 startBtn.addEventListener('click', startTimer);
-
+resetBtn.addEventListener('click', resetTimer);
