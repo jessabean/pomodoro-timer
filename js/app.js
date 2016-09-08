@@ -13,6 +13,10 @@ var padZero = function(num) {
 };
 
 var startTimer = function() {
+  if(interval) {
+    clearInterval(interval);
+  }
+
   interval = setInterval(countDown, 1000);
 };
 
