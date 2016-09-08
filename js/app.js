@@ -1,6 +1,7 @@
 var minutesWrap = document.getElementById('minutes-wrap'),
     secondsWrap = document.getElementById('seconds-wrap'),
     startBtn    = document.getElementById('start-button'),
+    stopBtn     = document.getElementById('stop-button'),
     resetBtn    = document.getElementById('reset-button'),
     minutes     = 25,
     seconds     = minutes * 60,
@@ -48,4 +49,5 @@ minutesWrap.innerHTML = padZero(minutes);
 secondsWrap.innerHTML = '00';
 
 startBtn.addEventListener('click', startTimer);
+stopBtn.addEventListener('click', stopTimer);
 resetBtn.addEventListener('click', resetTimer);
