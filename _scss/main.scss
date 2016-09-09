@@ -1,15 +1,37 @@
 body {
-  background: white;
   min-height: 100vh;
+  color: #fff;
+  background: #f56051;
 }
 
-.time {
+.link--footer {
   display: inline-block;
-  font-size: 2.5rem;
-  font-weight: bold;
-  
-  & + .time::before {
-    content: ":";
-    margin-right: 4px;
+  position: relative;
+  transition: transform 0.2s;
+  color: #444;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-4px);
+  }
+}
+
+.button {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0.5em;
+  border: none;
+  background: #444;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 4px;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  &:active {
+    box-shadow: inset 0 0 0 20rem rgba(0,0,0,.125),inset 0 3px 4px 0 rgba(0,0,0,.25),0 0 1px rgba(0,0,0,.125);
+    outline: none;
   }
 }

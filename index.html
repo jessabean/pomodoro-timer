@@ -13,31 +13,49 @@
   <link rel="stylesheet" href="css/main.css" type="text/css" media="all" />
 </head>
 
-<body class="flex flex-column">
-  <header role="banner" id="page_header">
+<body class="flex flex-column avenir">
+  <header role="banner" id="page_header" class="pv4 f1 tc">
+    Pomodoro Timer
   </header>
 
-  <main role="main" id="main" class="flex-auto justify-center flex flex-column">
-    <div id="timer-wrap" class="mw5 mw7-ns center tc">
-      <div id="minutes-wrap" class="time"></div>
-      <div id="seconds-wrap" class="time"></div>
+  <main role="main" id="main" class="flex-auto flex flex-column">
+    <div id="timer-wrap" class="mw5 mw7-ns pv4 center tc f-subheadline dt">
+      <div id="minutes-wrap" class="dtc fw7"></div>
+      <div class="dtc fw7 ph2">:</div>
+      <div id="seconds-wrap" class="dtc fw7"></div>
     </div>
     <div class="mw5 mw7-ns center tc">
-      <button type="button" id="start-button">Start</button>
-      <button type="button" id="stop-button">Stop</button>
-      <button type="button" id="reset-button">Reset</button>
+      <button type="button" id="start-button" class="button">
+        <svg id="play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="currentcolor">
+          <title>Start</title>
+          <path d="M4 4 L28 16 L4 28 z"></path>
+        </svg>
+      </button>
+      <button type="button" id="stop-button" class="button">
+        <svg id="pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="currentcolor">
+          <title>Pause</title>
+          <path d="M4 4 H12 V28 H4 z M20 4 H28 V28 H20 z"></path>
+        </svg>
+      </button>
+      <button type="button" id="reset-button" class="button">
+        <svg id="refresh" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="currentcolor">
+          <title>Reset</title>
+          <path d="M16 2 A14 14 0 0 0 2 16 A14 14 0 0 0 16 30 A14 14 0 0 0 26 26 L 23.25 23 A10 10 0 0 1 16 26 A10 10 0 0 1 6 16 A10 10 0 0 1 16 6 A10 10 0 0 1 23.25 9 L19 13 L30 13 L30 2 L26 6 A14 14 0 0 0 16 2"></path>
+        </svg>
+      </button>
     </div>
   </main>
+
   
   <footer role="contentinfo" id="page_footer" class="mw5 mw7-ns center tc">
     <p>
-      <a href="https://github.com/jessabean/pomodoro-timer" class="icon-link no-underline">
+      <a href="https://github.com/jessabean/pomodoro-timer" class="link--footer no-underline">
         <svg id="github" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="currentcolor">
           <path d="M0 18 C0 12 3 10 3 9 C2.5 7 2.5 4 3 3 C6 3 9 5 10 6 C12 5 14 5 16 5 C18 5 20 5 22 6 C23 5 26 3 29 3 C29.5 4 29.5 7 29 9 C29 10 32 12 32 18 C32 25 30 30 16 30 C2 30 0 25 0 18 M3 20 C3 24 4 28 16 28 C28 28 29 24 29 20 C29 16 28 14 16 14 C4 14 3 16 3 20 M8 21 A1.5 2.5 0 0 0 13 21 A1.5 2.5 0 0 0 8 21 M24 21 A1.5 2.5 0 0 0 19 21 A1.5 2.5 0 0 0 24 21 z"></path>
         </svg>
       </a>
     </p>
-    <p>Made with focus by <a href="http://jessica-eldredge.com" class="no-underline">jessabean</a></p>
+    <p>Made with focus by <a href="http://jessica-eldredge.com" class="link--footer no-underline">jessabean</a></p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
